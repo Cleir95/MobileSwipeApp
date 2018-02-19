@@ -53,6 +53,8 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
+    //find the difference between drag and motion event
+
 
         public boolean onTouchEvent( MotionEvent event) {
             switch (event.getAction()) {
