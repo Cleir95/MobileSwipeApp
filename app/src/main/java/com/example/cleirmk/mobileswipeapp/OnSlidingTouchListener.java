@@ -16,7 +16,6 @@ public class OnSlidingTouchListener implements OnTouchListener {
     public OnSlidingTouchListener(Context context){
         gestureDetector = new GestureDetector(context, new GestureListener());
     }
-
     public boolean onTouch(View v, MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
     }
@@ -29,7 +28,7 @@ public class OnSlidingTouchListener implements OnTouchListener {
 
         @Override
         public boolean onDown(MotionEvent e) {
-            float x1= e.getX();
+           /* float x1= e.getX();
             float y1 =e.getY();
 
             Log.d("start","" + x1 + "" + y1);
@@ -41,10 +40,13 @@ public class OnSlidingTouchListener implements OnTouchListener {
 
                 Log.d("current","" + x2 + "" + y2);
 
-            }
+            }*/
 
             return true;
         }
+
+
+
 
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
@@ -78,20 +80,28 @@ public class OnSlidingTouchListener implements OnTouchListener {
                 if (Math.abs(deltaX) > Math.abs(deltaY)) {
                     if (Math.abs(deltaX) > SLIDE_THRESHOLD) {
                         if (deltaX > 0) {
+                            Log.d("right","" +  + "" );
                             // the user made a sliding right gesture
+                            Log.v("slideR", "right");
+
                             return onSlideRight();
                         } else {
                             // the user made a sliding left gesture
+                            Log.v("slideR", "Left");
                             return onSlideLeft();
                         }
                     }
                 } else {
                     if (Math.abs(deltaY) > SLIDE_THRESHOLD) {
-                        if (deltaY > 0) {
-                            // the user made a sliding down gesture
-                            return onSlideDown();
+                        if (deltaY > 0 ) {
+
+                                // the user made a sliding down gesture
+                                Log.v("slideR", "down");
+                                return onSlideDown();
+
                         } else {
                             // the user made a sliding up gesture
+                            Log.v("slideR", "up");
                             return onSlideUp();
                         }
                     }
@@ -113,11 +123,11 @@ public class OnSlidingTouchListener implements OnTouchListener {
     }
 
     public boolean onSlideRight() {
-        return false;
+        return true;
     }
 
     public boolean onSlideLeft() {
-        return false;
+        return true;
     }
 
     public boolean onSlideUp() {

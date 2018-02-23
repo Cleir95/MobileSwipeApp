@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class Main3Activity extends AppCompatActivity {
-
+int score=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,30 +18,37 @@ public class Main3Activity extends AppCompatActivity {
         myView.setOnTouchListener(new com.example.cleirmk.mobileswipeapp.OnSlidingTouchListener(this) {
             @Override
             public boolean onSlideLeft() {
-                // do something
+                Log.d("left","" + score + "" );
                 return true;
             }
 
             @Override
             public boolean onSlideRight() {
-                // do something
+                Log.d("right","" + score + "" );
+
+
                 return true;
             }
 
             @Override
             public boolean onSlideUp() {
-                // do something
 
-                Log.v("fogfigdu","slideup");
+score++;
+                Log.d("up","" + score + "" );
+
                 return true;
             }
 
             @Override
             public boolean onSlideDown() {
-                Log.v("fogfigdu","slidedown");
-                // do something
+               score++;
+                Log.d("down","" + score + "" );
                 return true;
             }
+
+
+
+
         });
     }
 }

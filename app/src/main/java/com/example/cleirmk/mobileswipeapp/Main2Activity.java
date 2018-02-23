@@ -105,8 +105,6 @@ public class Main2Activity extends AppCompatActivity {
                 Log.d("current", "" + x2 + "" + y2);
 
 
-                float deltaX = x1 - x2;
-                float deltaY = e2.getX() - e1.getX();
 
             }
         }
